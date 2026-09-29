@@ -1,0 +1,10 @@
+{
+  "file_suffixes": {
+    "hdbsynonymconfig": {
+      "plugin_name": "com.sap.hana.di.synonym.config"
+    },
+    "hdbgrants": {
+      "plugin_name": "com.sap.hana.di.grantor"
+    }
+  }
+}

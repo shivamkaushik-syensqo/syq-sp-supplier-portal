@@ -1,0 +1,10 @@
+{
+  "SYQ_SupplierPortal_Central_HDI": {
+    "object_owner": {
+      "container_roles": ["syq-sup-central-HDI-access-role_g#"]
+    },
+    "application_user": {
+      "container_roles": ["syq-sup-central-HDI-access-role"]
+    }
+  }
+}

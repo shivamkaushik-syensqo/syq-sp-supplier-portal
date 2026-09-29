@@ -1,0 +1,83 @@
+_schema-version: 3.3.0
+ID: supplier-overview-portal
+version: 1.0.0
+description: "Supplier Overview Portal – reads replicated supplier data via cross-container synonyms"
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+        - node scripts/patch-hdbviews.js
+
+modules:
+  # ── Node.js server ──────────────────────────────────────────────
+  - name: supplier-overview-portal-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      instances: 1
+      buildpack: nodejs_buildpack
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: supplier-overview-portal-hdi
+      - name: supplier-overview-portal-auth
+      - name: supplier-overview-portal-destination
+
+  # ── HDI deployer ────────────────────────────────────────────────
+  - name: supplier-overview-portal-hdi-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: supplier-overview-portal-hdi
+        properties:
+          TARGET_CONTAINER: supplier-overview-portal-hdi
+      - name: SYQ_SupplierPortal_Central_HDI
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: SYQ_SupplierPortal_Central_HDI
+          service: SYQ_SupplierPortal_Central_HDI
+resources:
+  # ── Own HDI container ───────────────────────────────────────────
+  - name: supplier-overview-portal-hdi
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+
+  # ── XSUAA ──────────────────────────────────────────────────────
+  - name: supplier-overview-portal-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: supplier-overview-portal-auth
+        tenant-mode: dedicated
+        oauth2-configuration:
+          credential-types:
+            - "binding-secret"
+            - "x509"
+
+  # ── Destination service ────────────────────────────────────────
+  - name: supplier-overview-portal-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+
+  # ── Cross-container access to syq-sp-database-artifacts-cap ────
+  - name: SYQ_SupplierPortal_Central_HDI
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: SYQ_SupplierPortal_Central_HDI

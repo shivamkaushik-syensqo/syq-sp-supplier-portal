@@ -1,0 +1,82 @@
+{
+  "SUP_SUPPLIER": {
+    "target": {
+      "object": "RT_SUP_Supplier",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_SUPPLIERADDRESS": {
+    "target": {
+      "object": "RT_SUP_SupplierAddress",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_SUPPLIERBANK": {
+    "target": {
+      "object": "RT_SUP_SupplierBank",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_SUPPLIERCOMPANY": {
+    "target": {
+      "object": "RT_SUP_SupplierCompany",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_BIDDER": {
+    "target": {
+      "object": "RT_SUP_Bidder",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_BIDDERADDRESS": {
+    "target": {
+      "object": "RT_SUP_BidderAddress",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_PURCHASEORDER": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrder",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_PURCHASEORDERITEM": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrderItem",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_PURCHASEORDERSCHEDULELINE": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrderScheduleLine",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+
+  "SUP_PURORDSUPPLIERCONFIRMATION": {
+    "target": {
+      "object": "RT_SUP_PurOrdSupplierConfirmation",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+
+  "SUP_SUPPLIERINVOICE": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoice",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_SUPPLIERINVOICEITEM": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoiceItem",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  },
+  "SUP_SUPPLIERINVOICEPAYMENT": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoicePayment",
+      "schema.configure": "SYQ_SupplierPortal_Central_HDI/schema"
+    }
+  }
+}

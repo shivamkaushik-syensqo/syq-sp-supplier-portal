@@ -1,0 +1,67 @@
+{
+  "SUP_SUPPLIER": {
+    "target": {
+      "object": "RT_SUP_Supplier"
+    }
+  },
+  "SUP_SUPPLIERADDRESS": {
+    "target": {
+      "object": "RT_SUP_SupplierAddress"
+    }
+  },
+  "SUP_SUPPLIERBANK": {
+    "target": {
+      "object": "RT_SUP_SupplierBank"
+    }
+  },
+  "SUP_SUPPLIERCOMPANY": {
+    "target": {
+      "object": "RT_SUP_SupplierCompany"
+    }
+  },
+  "SUP_BIDDER": {
+    "target": {
+      "object": "RT_SUP_Bidder"
+    }
+  },
+  "SUP_BIDDERADDRESS": {
+    "target": {
+      "object": "RT_SUP_BidderAddress"
+    }
+  },
+  "SUP_PURCHASEORDER": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrder"
+    }
+  },
+  "SUP_PURCHASEORDERITEM": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrderItem"
+    }
+  },
+  "SUP_PURCHASEORDERSCHEDULELINE": {
+    "target": {
+      "object": "RT_SUP_PurchaseOrderScheduleLine"
+    }
+  },
+  "SUP_PURORDSUPPLIERCONFIRMATION": {
+    "target": {
+      "object": "RT_SUP_PurOrdSupplierConfirmation"
+    }
+  },
+  "SUP_SUPPLIERINVOICE": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoice"
+    }
+  },
+  "SUP_SUPPLIERINVOICEITEM": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoiceItem"
+    }
+  },
+  "SUP_SUPPLIERINVOICEPAYMENT": {
+    "target": {
+      "object": "RT_SUP_SupplierInvoicePayment"
+    }
+  }
+}
